@@ -23,12 +23,12 @@ def readmodules():
     while moduleName != "":
         module = {}
         module["name"]= moduleName
-    # I am not doing error handling
+  
         module["grade"]=int(input("\t\tEnter grade:"))
         modules.append(module)
-    # now read the next module name
+    
         moduleName = input("\tEnter next module name (blank to quit) :").strip()
-        return modules
+    return modules
 
 def displayModules(modules):
         print ("\tName \tGrade")
@@ -38,17 +38,15 @@ def displayModules(modules):
 def doview():
     for currentStudent in student:
         print(currentStudent["name"])
-    displayModules(currentStudent["modules"]);
+        displayModules(currentStudent["modules"]);
 
-    
 choice = displaymenu()
-
-while (choice != 'q'):
+while(choice != 'q'):
     if choice == 'a':
         doadd()
     elif choice == 'v':
         doview()
     elif choice != 'q':
         print ("\n\nplease select either a, v, or q")
-    choice = displaymenu
+    choice = displaymenu()
 
